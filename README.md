@@ -1,8 +1,45 @@
-# React + Vite
+# Инструкция по использованию приложения
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+Это приложение представляет собой небольшой виджет обменника криптовалюты. Фронтенд часть реализована с использованием библиотеки React. Использованное API: https://documenter.getpostman.com/view/8180765/SVfTPnM8?version=latest#intro
 
-Currently, two official plugins are available:
+## Логика работы
+1. Из API берется список всех валют ;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. В виджете можно выбрать левую и правую валюты;
+
+3. При выборе валют, выставляется в левом инпуте минимальная сумма обмена;
+
+4. В правый инпут считается и подставляется значение estimated для выбранных валют и суммы в левом инпуте;
+
+5. Если сумма меньше, чем минимальная, то в правый инпут пишется прочерк и выводится ошибка;
+
+6. Если для estimated или для min для выбранных валют API возвращает null, выводится ошибка this pair is disabled now.
+
+7. Макет:
+
+https://www.figma.com/file/fzcnpN2Pm9YY8CIpWbP3NE/Frontend-Test?node-id=0%3A1
+
+## Инструкции по запуску в терминале
+
+1. Клонируйте репозиторий с помощью команды:
+   ```bash
+   git clone https://github.com/OmgDie/crypto-exchanger
+   ```
+
+2. Перейдите в директорию проекта:
+   ```bash
+   cd crypto-exchanger
+   ```
+
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+   
+4. Откройте окно терминала и запустите клиентскую часть приложения с помощью команды:
+   ```bash
+   npm run dev
+   ```
+
+Приложение будет доступно для использования по адресу `http://127.0.0.1:5173/`.
