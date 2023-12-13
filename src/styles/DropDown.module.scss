@@ -1,0 +1,129 @@
+@import 'src/styles/common';
+
+.ExchangeDropdown,
+.ExchangeDropdownActive {
+  display: flex;
+  align-items: center;
+  .buttonSwitcher {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    cursor: pointer;
+    width: 34%;
+    padding-left: 34px;
+    padding-right: 17px;
+    margin-left: 5px;
+    border-left: 1px solid $gray-color;
+    .space {
+      width: 100%;
+      display: flex;
+      align-self: center;
+      justify-content: space-evenly;
+      gap: 12px;
+      svg {
+        margin-left: 8px;
+      }
+    }
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  input {
+    background: none;
+    border: none;
+    color: $black-color;
+    font-weight: 400;
+    font-size: 16px;
+    height: 50px;
+    padding-right: 10px;
+    line-height: 23px;
+    box-sizing: border-box;
+  }
+}
+
+.ExchangeDropdown {
+  border: 1px solid $gray-color;
+  background: $lightGray-color;
+  width: 52%;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.dropdownMenu {
+  padding: 16px 13px;
+  cursor: pointer;
+  position: relative;
+  right: 2.5px;
+  bottom: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: 100%;
+  background: $lightGray-color;
+  border: 1px solid $gray-color;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.ExchangeDropdownActive {
+  position: relative;
+  flex-direction: column;
+  width: 52%;
+  button {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+  input {
+    border-top: 1px solid $gray-color;
+    border-left: 1px solid $gray-color;
+    border-right: 1px solid $gray-color;
+    background: $lightGray-color;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50px;
+    &:hover {
+      border: none;
+      border-top: 1px solid $gray-color;
+      border-left: 1px solid $gray-color;
+      border-right: 1px solid $gray-color;
+    }
+  }
+  .buttonSwitcher {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dropdownElement {
+    background: gray;
+    .dropdownElementTicker,
+    .dropdownElementName {
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+    }
+    .dropdownElementTicker {
+      margin: 0 0 0 12px;
+      color: $black-color;
+    }
+
+    .dropdownElementName {
+      margin: 0 0 0 16px;
+      color: $gray-color;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .ExchangeDropdown,
+  .ExchangeDropdownActive {
+    width: 100%;
+  }
+}
